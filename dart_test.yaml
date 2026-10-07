@@ -1,0 +1,17 @@
+# The default platform stays the Dart VM: the commit check runs `dart test`.
+# The browser tests in test/browser run with `dart test -P browser`, add
+# `-c dart2wasm` for WebAssembly.
+presets:
+  browser:
+    platforms: [chrome]
+    paths: [test/browser]
+
+override_platforms:
+  chrome:
+    settings:
+      # Headless Chrome denies every permission prompt. Disabling the feature
+      # BlockMidiByDefault restores the behaviour of older Chrome versions:
+      # MIDI access without System Exclusive needs no prompt. System Exclusive
+      # stays denied. package:test passes IntensiveWakeUpThrottling itself;
+      # the last --disable-features wins, so it is repeated here.
+      arguments: --disable-features=IntensiveWakeUpThrottling,BlockMidiByDefault

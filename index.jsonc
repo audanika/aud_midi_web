@@ -6,17 +6,19 @@
 
 {
   "name": "aud_midi_web",
-  "summary": "The browser backend of aud_midi, built on the Web MIDI API through package:web.",
+  "summary": "The browser backend of aud_midi: WebMidiBackend on the Web MIDI API through package:web; byte ports, receive timestamps, scheduled send, hotplug.",
   "domain": [
-    "Browser MIDI backend"
+    "Browser MIDI backend",
+    "Web MIDI permissions, secure context, SysEx",
+    "Pure-Dart browser interface, VM-testable"
   ],
   "interfaces": {
     "uses": {
-      "aud_midi_core": "backend contracts",
-      "aud_midi_standard": "models"
+      "aud_midi_core": "MidiBackend, MidiBackendHost, MidiClockMapper, MidiException",
+      "aud_midi_standard": "port, packet, diagnostic, capability models; MidiStatus"
     },
     "usedBy": {
-      "aud_midi": "consumes this package"
+      "aud_midi": "WebMidiBackend in the browser"
     }
   }
 }
