@@ -2,7 +2,7 @@
 
 Das Browser-Backend von aud_midi, gebaut auf der Web-MIDI-API über package:web.
 
-Teil der aud_midi-Familie, siehe [aud_midi](https://github.com/audanika/aud_midi).
+Teil der aud_midi-Familie, siehe [aud_midi](https://github.com/audmidi/aud_midi).
 
 ## Ziele
 
