@@ -8,11 +8,11 @@ import 'package:aud_midi_web/aud_midi_web.dart';
 import 'package:test/test.dart';
 
 void main() {
-  group('Example', () {
-    group('greet()', () {
-      test('should greet the name', () {
-        expect(const Example('World').greet(), 'Hello World!');
-      });
+  group('WebMidiApi', () {
+    test('is implemented by the API of platforms without a browser', () {
+      const WebMidiApi api = WebMidiUnavailableApi();
+
+      expect([api.isAvailable, api.isSecureContext], equals([false, true]));
     });
   });
 }

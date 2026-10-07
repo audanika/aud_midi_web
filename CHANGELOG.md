@@ -6,6 +6,7 @@
 
 - Add boilerplate
 - Add package dependencies
+- Add the Web MIDI backend
 
 ### Changed
 
